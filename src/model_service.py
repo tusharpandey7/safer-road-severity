@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import shap
 from scipy import sparse
+from scipy.special import expit
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,6 +31,9 @@ class SaferPredictor:
     def __init__(self, artifact: dict[str, Any], background: pd.DataFrame):
         self.models: dict[str, Any] = artifact["models"]
         self.alpha: float = float(artifact["alpha"])
+        self.beta: float = float(artifact.get("beta", 0.0))
+        self.calibrator: dict[str, Any] = artifact.get("calibrator", {"method": "raw"})
+        self.calibration_method: str = str(artifact.get("calibration_method", "raw"))
         self.fatal_threshold: float = float(artifact["fatal_threshold"])
         self.labels: list[str] = list(artifact["labels"])
         self.background = background[FEATURES].copy()
@@ -47,12 +51,33 @@ class SaferPredictor:
             reliability = np.exp(-self.alpha * entropy)
             per_model.append(aligned)
             reliabilities.append(reliability)
-        weights = np.stack(reliabilities, axis=1)
+        stack = np.stack(per_model, axis=1)
+        consensus = np.mean(stack, axis=1, keepdims=True)
+        disagreement = (
+            stack * np.log(np.clip(stack, 1e-12, 1.0) / np.clip(consensus, 1e-12, 1.0))
+        ).sum(axis=2) / np.log(len(LABELS))
+        weights = np.stack(reliabilities, axis=1) * np.exp(-self.beta * disagreement)
         weights /= weights.sum(axis=1, keepdims=True)
         probabilities = np.zeros_like(per_model[0])
         for idx, p in enumerate(per_model):
             probabilities += weights[:, idx, None] * p
-        return probabilities
+        return self.calibrate(probabilities)
+
+    def calibrate(self, probabilities: np.ndarray) -> np.ndarray:
+        """Apply the selected one-vs-rest calibration mapping and renormalize."""
+        method = self.calibrator.get("method", "raw")
+        if method == "raw":
+            return probabilities / probabilities.sum(axis=1, keepdims=True)
+        calibrated = []
+        for index, model in enumerate(self.calibrator["models"]):
+            if method == "platt":
+                calibrated.append(expit(model["coef"] * probabilities[:, index] + model["intercept"]))
+            elif method == "isotonic":
+                calibrated.append(model.predict(probabilities[:, index]))
+            else:
+                raise ValueError(f"Unsupported stored calibration method: {method}")
+        calibrated = np.column_stack(calibrated).clip(1e-9, 1.0)
+        return calibrated / calibrated.sum(axis=1, keepdims=True)
 
     def predict(self, frame: pd.DataFrame) -> np.ndarray:
         probabilities = self.predict_proba(frame)
@@ -95,12 +120,17 @@ class SaferPredictor:
                 entropy = -(aligned * np.log(np.clip(aligned, 1e-12, 1.0))).sum(axis=1) / np.log(len(LABELS))
                 model_probabilities.append(aligned)
                 reliabilities.append(np.exp(-self.alpha * entropy))
-            weights = np.stack(reliabilities, axis=1)
+            stack = np.stack(model_probabilities, axis=1)
+            consensus = np.mean(stack, axis=1, keepdims=True)
+            disagreement = (
+                stack * np.log(np.clip(stack, 1e-12, 1.0) / np.clip(consensus, 1e-12, 1.0))
+            ).sum(axis=2) / np.log(len(LABELS))
+            weights = np.stack(reliabilities, axis=1) * np.exp(-self.beta * disagreement)
             weights /= weights.sum(axis=1, keepdims=True)
             combined = np.zeros_like(model_probabilities[0])
             for index, probabilities in enumerate(model_probabilities):
                 combined += weights[:, index, None] * probabilities
-            return combined
+            return self.calibrate(combined)
 
         explainer = shap.PermutationExplainer(
             score_encoded,

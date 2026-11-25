@@ -6,7 +6,7 @@ import json
 import pandas as pd
 import streamlit as st
 
-from src.data_service import read_ablation, read_class_report, read_confusion, read_dataset, read_metrics
+from src.data_service import read_ablation, read_class_report, read_confusion, read_dataset, read_metrics, read_output_csv
 from src.model_service import load_predictor
 from src.data_service import ROOT
 
@@ -40,6 +40,11 @@ def load_ablation_table() -> pd.DataFrame:
 def load_refit_metrics() -> dict:
     path = ROOT / "outputs" / "interactive_model_metrics.json"
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+@st.cache_data
+def load_experiment_table(filename: str) -> pd.DataFrame:
+    return read_output_csv(filename)
 
 
 @st.cache_resource

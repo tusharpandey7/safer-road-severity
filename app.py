@@ -20,11 +20,11 @@ pages = [
     ),
     st.Page(
         "app_pages/performance.py", title="Model performance", icon=":material/monitoring:",
-        help="Compare the supplied Dataset A and Dataset B metrics, class reports, confusion matrices, and ablation results.",
+        help="Compare all model configurations, paired confidence intervals, and calibration quality across test samples.",
     ),
     st.Page(
         "app_pages/explorer.py", title="Dataset explorer", icon=":material/table_chart:",
-        help="Explore and download the two supplied synthetic samples with simple severity breakdowns.",
+        help="Explore and download Datasets A, B, and the low-Fatal-prior Dataset C stress sample.",
     ),
     st.Page(
         "app_pages/methodology.py", title="Method and limits", icon=":material/menu_book:",

@@ -131,20 +131,21 @@ if result:
             st.badge(f"{predicted} severity", color=color, icon=":material/traffic:")
             st.metric("Selected class score", f"{selected_score:.1%}", border=True)
         with rule_col:
-            st.markdown("**Three-class model scores**")
+            st.markdown("**Calibrated class scores**")
             score_frame = pd.DataFrame({"Severity": LABELS, "Score": [float(value) * 100 for value in result["scores"]]})
             probability_chart = (
                 alt.Chart(score_frame)
                 .mark_bar(cornerRadiusEnd=4)
                 .encode(
-                    x=alt.X("Score:Q", title="Model score (%)", scale=alt.Scale(domain=[0, 100])),
+                    x=alt.X("Score:Q", title="Calibrated score (%)", scale=alt.Scale(domain=[0, 100])),
                     y=alt.Y("Severity:N", sort=LABELS, title=None),
                     color=alt.Color("Severity:N", scale=alt.Scale(domain=LABELS, range=["#138A80", "#D69E2E", "#D9534F"]), legend=None),
                     tooltip=["Severity:N", alt.Tooltip("Score:Q", format=".1f")],
                 ).properties(height=150)
             )
             st.altair_chart(probability_chart, alt="SAFER model-assigned scores for Slight, Serious, and Fatal")
-    st.caption(f"Fatal decision rule: classify as Fatal when its model score is at least {load_model().fatal_threshold:.0%}; otherwise select the higher-scoring non-Fatal class. Scores are not calibrated real-world probabilities.")
+    predictor = load_model()
+    st.caption(f"Decision rule: Fatal is selected at or above the validation-selected {predictor.fatal_threshold:.0%} threshold; otherwise the higher-scoring non-Fatal class is returned. Calibration method: {predictor.calibration_method}. Calibration is measured on synthetic data and is not a real-world probability guarantee.")
 
     st.subheader("Plain-English explanation")
     attribution = np.asarray(result["shap_values"], dtype=float)
@@ -165,7 +166,7 @@ if result:
                 f"{row['Feature']} ({row['Entered value']}, {row['SHAP contribution (percentage points)']:+.1f} pp)"
                 for _, row in frame.iterrows()
             )
-        narrative = f"For this entered scenario, the adaptive ensemble selected **{predicted}** with a {selected_score:.1%} model score."
+        narrative = f"For this entered scenario, the adaptive ensemble selected **{predicted}** with a {selected_score:.1%} calibrated score for the synthetic study distribution."
         if not positive.empty:
             narrative += f" The largest local signals pushing the {predicted} score upward were {factor_list(positive)}."
         if not negative.empty:
@@ -196,8 +197,9 @@ if result:
 
     download = {
         "predicted_severity": predicted,
-        "model_scores_not_calibrated_probabilities": dict(zip(LABELS, result["scores"])),
+        "synthetic_study_calibrated_class_scores": dict(zip(LABELS, result["scores"])),
         "scenario": result["scenario"],
+        "calibration_scope": "Calibrated on synthetic Dataset A validation data; not a real-world probability guarantee.",
         "explanation": "Local permutation SHAP contributions are model associations, not causes.",
     }
     st.download_button(

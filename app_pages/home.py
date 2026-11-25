@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 
 from src.model_service import LABELS
-from src.ui_helpers import as_percent, load_data, load_metric_table
+from src.ui_helpers import as_percent, load_data, load_experiment_table
 
 
 st.title("Road severity, made easier to inspect", icon=":material/alt_route:")
@@ -14,18 +14,19 @@ st.warning(
     title="Know what this model can tell you",
 )
 
-metrics_a = load_metric_table("A")
-metrics_b = load_metric_table("B")
-raae_a = metrics_a.loc[metrics_a["Model"] == "SAFER RAAE"].iloc[0]
-raae_b = metrics_b.loc[metrics_b["Model"] == "SAFER RAAE"].iloc[0]
+experiments = load_experiment_table("ensemble_comparison.csv")
+raae_a = experiments.loc[experiments["Dataset"].eq("Dataset A test") & experiments["Model"].str.startswith("Selected SAFER")].iloc[0]
+raae_b = experiments.loc[experiments["Dataset"].eq("Dataset B same-simulator") & experiments["Model"].str.startswith("Selected SAFER")].iloc[0]
 data_a = load_data("A")
 data_b = load_data("B")
+data_c = load_data("C")
+fatal_share_c = data_c["severity"].eq("Fatal").mean()
 
 with st.container(horizontal=True):
-    st.metric("Dataset A test accuracy", as_percent(raae_a["Accuracy"]), border=True)
-    st.metric("Dataset B accuracy", as_percent(raae_b["Accuracy"]), border=True)
-    st.metric("Dataset B Fatal recall", as_percent(raae_b["Fatal Recall"]), border=True)
-    st.metric("Synthetic records", f"{len(data_a) + len(data_b):,}", border=True)
+    st.metric("Dataset A test accuracy", as_percent(raae_a["accuracy"]), border=True)
+    st.metric("Dataset B accuracy", as_percent(raae_b["accuracy"]), border=True)
+    st.metric("Dataset B Fatal recall", as_percent(raae_b["fatal_recall"]), border=True)
+    st.metric("Dataset C stress sample", f"{len(data_c):,} rows", border=True)
 
 left, right = st.columns([1.1, 0.9], gap="large")
 with left:
@@ -54,6 +55,7 @@ with left:
         )
         st.altair_chart(chart, alt="Dataset A class counts: slight, serious, and fatal synthetic labels")
         st.caption("Dataset A was generated with fixed simulator thresholds; its class balance is not a measure of real crash prevalence.")
+        st.caption(f"Dataset C uses a {fatal_share_c:.1%} Fatal class prior as a STATS19-inspired stress scenario. It is a no-replacement subset of B, so it is not independent of B.")
 
 with right:
     with st.container(border=True):
@@ -62,10 +64,10 @@ with right:
             "1. Open **Scenario lab**.\n"
             "2. Enter the 13 fields available in the SAFER dataset.\n"
             "3. Review the class scores and the local SHAP explanation.\n"
-            "4. Open **Model performance** to inspect class-level results and error patterns."
+            "4. Open **Model performance** to compare model configurations, paired uncertainty intervals, and calibration."
         )
         st.info(
-            "The displayed percentages are model scores. They are not calibrated probabilities of a real crash outcome.",
+            "The displayed class scores are calibrated against synthetic validation data. They are not probabilities of a real-world crash outcome.",
             title="Interpretation",
         )
 

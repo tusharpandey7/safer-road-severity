@@ -15,13 +15,13 @@ This project cannot run as a native Netlify deployment in its current Streamlit 
 
 For the simplest public demo, put this folder in a GitHub repository, open Streamlit Community Cloud, create an app, and select `app.py` as the entrypoint. The included `requirements.txt`, datasets, and model are in the repository for deployment.
 
-In the deployment form, open **Advanced settings** and select **Python 3.13**. This matches the Python version used to build and smoke-check the included model artifact. Community Cloud currently defaults to Python 3.12, so selecting the project version avoids avoidable model-library compatibility differences.
+In the deployment form, open **Advanced settings** and select **Python 3.13**. This matches the Python version used to build the included model artifact and pinned libraries.
 
 After deployment, check the app logs once to confirm that all pinned packages installed and the model loaded. The app needs no secrets or API keys.
 
 If Netlify is mandatory, it can host a separately built static frontend, but the prediction service must run on a Python-capable host and the frontend must call that service. This ZIP does not pretend Netlify can run `streamlit run app.py` directly.
 
-The included datasets and model are local files, so the Streamlit-hosted app does not need a weather API or external dataset download at runtime.
+The included datasets and model are local files, so the Streamlit-hosted app does not need a weather API or external dataset download at runtime. Dataset C, calibration tables, comparison tables, and reliability-curve data are included in the repository.
 
 Official references:
 

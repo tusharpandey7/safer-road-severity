@@ -7,11 +7,11 @@ from src.model_service import FEATURES, LABELS
 from src.ui_helpers import load_data
 
 st.title("Dataset explorer", icon=":material/table_chart:")
-st.caption("Inspect the two simulator-generated tables supplied with the SAFER package.")
-st.warning("These are synthetic records. The weather, road context, collision date, and severity labels are simulated; this page is not a live government data feed.", title="Synthetic data")
+st.caption("Inspect the simulator samples and the low-Fatal-prior stress-test sample.")
+st.warning("All records and labels are synthetic. Dataset C is sampled from Dataset B without replacement to test a lower Fatal class prior; C therefore overlaps B and is not a second independent validation set.", title="Synthetic data")
 
-choice = st.segmented_control("Dataset", ["Dataset A · development", "Dataset B · independent sample"], default="Dataset A · development", key="explorer_set")
-which = "A" if choice == "Dataset A · development" else "B"
+choice = st.segmented_control("Dataset", ["Dataset A · development", "Dataset B · same-simulator sample", "Dataset C · prior-shift stress test"], default="Dataset A · development", key="explorer_set")
+which = {"Dataset A · development": "A", "Dataset B · same-simulator sample": "B", "Dataset C · prior-shift stress test": "C"}[choice]
 frame = load_data(which)
 target_counts = frame["severity"].value_counts().reindex(LABELS, fill_value=0)
 sample_period = f"{frame['collision_date'].min():%Y-%m-%d} to {frame['collision_date'].max():%Y-%m-%d}"
