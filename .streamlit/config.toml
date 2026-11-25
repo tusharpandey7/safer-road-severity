@@ -1,0 +1,73 @@
+# SAFER theme: compact, accessible, native Streamlit styling.
+[theme]
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "8px"
+buttonRadius = "8px"
+font = "sans serif"
+headingFont = "sans serif"
+codeFont = "monospace"
+baseFontSize = 15
+baseFontWeight = 400
+headingFontSizes = ["30px", "23px", "19px", "16px", "14px", "12px"]
+headingFontWeights = [700, 650, 600, 600, 500, 500]
+paddingTop = "1rem"
+paddingBottom = "2.5rem"
+
+[theme.light]
+primaryColor = "#147D78"
+backgroundColor = "#F7F9FC"
+secondaryBackgroundColor = "#FFFFFF"
+codeBackgroundColor = "#EEF2F7"
+textColor = "#182230"
+linkColor = "#126B68"
+borderColor = "#D9E1EA"
+greenColor = "#138A80"
+redColor = "#D9534F"
+yellowColor = "#D69E2E"
+orangeColor = "#D97706"
+blueColor = "#3975B7"
+violetColor = "#7655A6"
+grayColor = "#667085"
+chartCategoricalColors = ["#147D78", "#D69E2E", "#D9534F", "#3975B7", "#7655A6", "#667085"]
+chartSequentialColors = ["#EFF8F7", "#D9EFEC", "#B5DFDA", "#8BCBC4", "#5DB4AB", "#349B92", "#147D78", "#116B67", "#0E5956", "#0B4745"]
+dataframeBorderColor = "#D9E1EA"
+dataframeHeaderBackgroundColor = "#EEF2F7"
+dataframeHeaderTextColor = "#182230"
+
+[theme.dark]
+primaryColor = "#54B8AE"
+backgroundColor = "#111923"
+secondaryBackgroundColor = "#1B2733"
+codeBackgroundColor = "#253443"
+textColor = "#EFF4F8"
+linkColor = "#7AD0C7"
+borderColor = "#344555"
+greenColor = "#54B8AE"
+redColor = "#F17773"
+yellowColor = "#E9BA58"
+orangeColor = "#F0A354"
+blueColor = "#75A9E1"
+violetColor = "#B19ADC"
+grayColor = "#A8B5C2"
+chartCategoricalColors = ["#54B8AE", "#E9BA58", "#F17773", "#75A9E1", "#B19ADC", "#A8B5C2"]
+chartSequentialColors = ["#0B4745", "#0E5956", "#116B67", "#147D78", "#349B92", "#5DB4AB", "#8BCBC4", "#B5DFDA", "#D9EFEC", "#EFF8F7"]
+dataframeBorderColor = "#344555"
+dataframeHeaderBackgroundColor = "#253443"
+dataframeHeaderTextColor = "#EFF4F8"
+
+[theme.sidebar]
+paddingTop = "1rem"
+paddingBottom = "1.5rem"
+
+[theme.light.sidebar]
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F1F5F8"
+textColor = "#182230"
+borderColor = "#D9E1EA"
+
+[theme.dark.sidebar]
+backgroundColor = "#0C131B"
+secondaryBackgroundColor = "#1B2733"
+textColor = "#EFF4F8"
+borderColor = "#344555"
