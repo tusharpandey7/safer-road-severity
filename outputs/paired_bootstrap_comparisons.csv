@@ -1,97 +1,97 @@
 Dataset,Comparison,Metric,Delta,CI 2.5%,CI 97.5%,Replicates
-Dataset A test,Logistic Regression − Uniform soft voting,accuracy,-0.005122500000000003,-0.01849999999999996,0.008500000000000063,1000
-Dataset A test,Logistic Regression − Uniform soft voting,balanced_accuracy,-0.0017405324797402511,-0.014874126119476283,0.011614228551215435,1000
-Dataset A test,Logistic Regression − Uniform soft voting,macro_f1,-0.0047373198044649255,-0.017848044657185425,0.00876007564623016,1000
-Dataset A test,Logistic Regression − Uniform soft voting,fatal_recall,0.02937527385976778,0.007981669796501658,0.05154805453940798,1000
-Dataset A test,Random Forest − Uniform soft voting,accuracy,-0.04438599999999999,-0.058499999999999996,-0.02849999999999997,1000
-Dataset A test,Random Forest − Uniform soft voting,balanced_accuracy,-0.04650131248580935,-0.06056055359081706,-0.03139333511085393,1000
-Dataset A test,Random Forest − Uniform soft voting,macro_f1,-0.042840254731319305,-0.056872416782709614,-0.027822119278945633,1000
-Dataset A test,Random Forest − Uniform soft voting,fatal_recall,-0.06577942609496264,-0.09040383779627592,-0.043300730388153574,1000
-Dataset A test,LightGBM − Uniform soft voting,accuracy,-0.027505999999999985,-0.03901250000000003,-0.016000000000000014,1000
-Dataset A test,LightGBM − Uniform soft voting,balanced_accuracy,-0.02727782224458528,-0.039327155989664284,-0.015597310385499075,1000
-Dataset A test,LightGBM − Uniform soft voting,macro_f1,-0.027386345916690123,-0.03890981979332082,-0.01570864116148998,1000
-Dataset A test,LightGBM − Uniform soft voting,fatal_recall,-0.02467313624426166,-0.04771590343217934,-0.00394419306184014,1000
-Dataset A test,Entropy adaptive (alpha=2) − Uniform soft voting,accuracy,-0.0015990000000000015,-0.006500000000000061,0.0035000000000000586,1000
-Dataset A test,Entropy adaptive (alpha=2) − Uniform soft voting,balanced_accuracy,-0.00047685872976726076,-0.005800666207086852,0.004968178029376754,1000
-Dataset A test,Entropy adaptive (alpha=2) − Uniform soft voting,macro_f1,-0.0015330493478329097,-0.0066566608363952395,0.0037978302869886124,1000
-Dataset A test,Entropy adaptive (alpha=2) − Uniform soft voting,fatal_recall,0.009894247821363363,0.0,0.020676691729323293,1000
-Dataset A test,Entropy + disagreement (beta=0.5) − Uniform soft voting,accuracy,-0.0016005000000000012,-0.006500000000000061,0.0034999999999999476,1000
-Dataset A test,Entropy + disagreement (beta=0.5) − Uniform soft voting,balanced_accuracy,-0.0004658704174718139,-0.005707055427708718,0.004715614444216414,1000
-Dataset A test,Entropy + disagreement (beta=0.5) − Uniform soft voting,macro_f1,-0.0013991077657124695,-0.00634633060605915,0.0036462579935253366,1000
-Dataset A test,Entropy + disagreement (beta=0.5) − Uniform soft voting,fatal_recall,0.009894247821363363,0.0,0.020676691729323293,1000
-Dataset A test,Entropy + disagreement (beta=1) − Uniform soft voting,accuracy,-0.0016005000000000012,-0.006500000000000061,0.0034999999999999476,1000
-Dataset A test,Entropy + disagreement (beta=1) − Uniform soft voting,balanced_accuracy,-0.0004658704174718139,-0.005707055427708718,0.004715614444216414,1000
-Dataset A test,Entropy + disagreement (beta=1) − Uniform soft voting,macro_f1,-0.0013991077657124695,-0.00634633060605915,0.0036462579935253366,1000
-Dataset A test,Entropy + disagreement (beta=1) − Uniform soft voting,fatal_recall,0.009894247821363363,0.0,0.020676691729323293,1000
-Dataset A test,Entropy + disagreement (beta=2) − Uniform soft voting,accuracy,-0.0031080000000000005,-0.008000000000000007,0.0015000000000000568,1000
-Dataset A test,Entropy + disagreement (beta=2) − Uniform soft voting,balanced_accuracy,-0.0022213388956092714,-0.006938580465657027,0.002336045951957016,1000
-Dataset A test,Entropy + disagreement (beta=2) − Uniform soft voting,macro_f1,-0.0028278697974035987,-0.007642260740994919,0.0017909293767792128,1000
-Dataset A test,Entropy + disagreement (beta=2) − Uniform soft voting,fatal_recall,0.0058534954881720065,-0.0019609773043075427,0.015037593984962405,1000
-Dataset A test,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,accuracy,-0.024713999999999996,-0.03600000000000003,-0.012499999999999956,1000
-Dataset A test,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,balanced_accuracy,-0.01331170275206614,-0.02443282242230819,-0.00044125597996633664,1000
-Dataset A test,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,macro_f1,-0.029141085248607312,-0.04100669658765216,-0.01619831701100439,1000
-Dataset A test,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,fatal_recall,0.09449661680591596,0.0702965187435595,0.12146364898046325,1000
-Dataset B same-simulator,Logistic Regression − Uniform soft voting,accuracy,-0.010433599999999996,-0.019405000000000082,-0.0017999999999999128,1000
-Dataset B same-simulator,Logistic Regression − Uniform soft voting,balanced_accuracy,-0.008005504208174617,-0.016899481744075198,0.0006174785500510108,1000
-Dataset B same-simulator,Logistic Regression − Uniform soft voting,macro_f1,-0.010815667339916723,-0.019425170560511358,-0.0021473315440861613,1000
-Dataset B same-simulator,Logistic Regression − Uniform soft voting,fatal_recall,0.016605068591906386,0.0029119713466290616,0.030328251328384525,1000
-Dataset B same-simulator,Random Forest − Uniform soft voting,accuracy,-0.031111199999999995,-0.04139999999999999,-0.02100000000000002,1000
-Dataset B same-simulator,Random Forest − Uniform soft voting,balanced_accuracy,-0.03258945584601951,-0.042967571687125096,-0.02264932683665913,1000
-Dataset B same-simulator,Random Forest − Uniform soft voting,macro_f1,-0.03059602183383847,-0.04080405500118714,-0.02026016218087705,1000
-Dataset B same-simulator,Random Forest − Uniform soft voting,fatal_recall,-0.04673980854869528,-0.0636970669490343,-0.02970649614324344,1000
-Dataset B same-simulator,LightGBM − Uniform soft voting,accuracy,-0.012667999999999997,-0.01960500000000006,-0.005199999999999982,1000
-Dataset B same-simulator,LightGBM − Uniform soft voting,balanced_accuracy,-0.01300169099047764,-0.01997615027111352,-0.0057373972924106955,1000
-Dataset B same-simulator,LightGBM − Uniform soft voting,macro_f1,-0.012900320109278406,-0.01965630623775395,-0.00569966305277224,1000
-Dataset B same-simulator,LightGBM − Uniform soft voting,fatal_recall,-0.015440109764570834,-0.028075510218233186,-0.003153609030394195,1000
-Dataset B same-simulator,Entropy adaptive (alpha=2) − Uniform soft voting,accuracy,0.00026560000000000103,-0.0023999999999999603,0.0031999999999999806,1000
-Dataset B same-simulator,Entropy adaptive (alpha=2) − Uniform soft voting,balanced_accuracy,0.0009016170090302007,-0.0017715755000278805,0.003866199490487034,1000
-Dataset B same-simulator,Entropy adaptive (alpha=2) − Uniform soft voting,macro_f1,4.962236698229372e-05,-0.0026140645298311253,0.002964281537130726,1000
-Dataset B same-simulator,Entropy adaptive (alpha=2) − Uniform soft voting,fatal_recall,0.007649581509548207,0.0029999154091193193,0.01335336355765859,1000
-Dataset B same-simulator,Entropy + disagreement (beta=0.5) − Uniform soft voting,accuracy,0.00045920000000000016,-0.002005000000000001,0.0031999999999999806,1000
-Dataset B same-simulator,Entropy + disagreement (beta=0.5) − Uniform soft voting,balanced_accuracy,0.0010792952611906462,-0.0014999817547003025,0.003901118062299513,1000
-Dataset B same-simulator,Entropy + disagreement (beta=0.5) − Uniform soft voting,macro_f1,0.00026470303219559377,-0.0023880228329868107,0.003130128497975465,1000
-Dataset B same-simulator,Entropy + disagreement (beta=0.5) − Uniform soft voting,fatal_recall,0.007649581509548207,0.0029999154091193193,0.01335336355765859,1000
-Dataset B same-simulator,Entropy + disagreement (beta=1) − Uniform soft voting,accuracy,0.0004716000000000027,-0.002204999999999979,0.0031999999999999806,1000
-Dataset B same-simulator,Entropy + disagreement (beta=1) − Uniform soft voting,balanced_accuracy,0.001090648857590964,-0.0015904461256333157,0.003845779446874092,1000
-Dataset B same-simulator,Entropy + disagreement (beta=1) − Uniform soft voting,macro_f1,0.0003059078000420612,-0.0024499127405865156,0.0029514705868234127,1000
-Dataset B same-simulator,Entropy + disagreement (beta=1) − Uniform soft voting,fatal_recall,0.007649581509548207,0.0029999154091193193,0.01335336355765859,1000
-Dataset B same-simulator,Entropy + disagreement (beta=2) − Uniform soft voting,accuracy,-0.00011259999999999859,-0.0023999999999999603,0.0021999999999999797,1000
-Dataset B same-simulator,Entropy + disagreement (beta=2) − Uniform soft voting,balanced_accuracy,0.00020902084235159047,-0.002055019019956611,0.002463768571262481,1000
-Dataset B same-simulator,Entropy + disagreement (beta=2) − Uniform soft voting,macro_f1,-0.00036007026464109483,-0.002668959380867608,0.0019147622293121693,1000
-Dataset B same-simulator,Entropy + disagreement (beta=2) − Uniform soft voting,fatal_recall,0.0038834920121243945,0.0,0.007734552045777362,1000
-Dataset B same-simulator,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,accuracy,-0.019579799999999994,-0.027205,-0.011594999999999949,1000
-Dataset B same-simulator,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,balanced_accuracy,-0.008767020047833597,-0.01629519550850322,-0.000742442564462556,1000
-Dataset B same-simulator,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,macro_f1,-0.02446905152072657,-0.03260864292194601,-0.016106407719424773,1000
-Dataset B same-simulator,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,fatal_recall,0.10060065466369804,0.08604467010417755,0.11710719163439297,1000
-Dataset C prior-shift,Logistic Regression − Uniform soft voting,accuracy,-0.008885500000000006,-0.023500000000000076,0.0040000000000000036,1000
-Dataset C prior-shift,Logistic Regression − Uniform soft voting,balanced_accuracy,-0.00587487020032483,-0.017202626311944063,0.007256467795529358,1000
-Dataset C prior-shift,Logistic Regression − Uniform soft voting,macro_f1,-0.013495346372703193,-0.03128769799097888,0.0044340953625790075,1000
-Dataset C prior-shift,Logistic Regression − Uniform soft voting,fatal_recall,0.0,0.0,0.0,1000
-Dataset C prior-shift,Random Forest − Uniform soft voting,accuracy,-0.028642000000000025,-0.04301250000000004,-0.015000000000000013,1000
-Dataset C prior-shift,Random Forest − Uniform soft voting,balanced_accuracy,-0.010450106401199321,-0.0502753875604245,0.03206229990871563,1000
-Dataset C prior-shift,Random Forest − Uniform soft voting,macro_f1,-0.02901512209887915,-0.05627353563570486,-0.0028185309659763303,1000
-Dataset C prior-shift,Random Forest − Uniform soft voting,fatal_recall,0.032118900035109005,-0.08339285714285717,0.1515151515151516,1000
-Dataset C prior-shift,LightGBM − Uniform soft voting,accuracy,-0.009130000000000006,-0.020000000000000018,0.0020000000000000018,1000
-Dataset C prior-shift,LightGBM − Uniform soft voting,balanced_accuracy,0.011893491298014968,-0.01431869570118291,0.047044381910549715,1000
-Dataset C prior-shift,LightGBM − Uniform soft voting,macro_f1,-0.007081800664869563,-0.028007456402415188,0.014521395276950453,1000
-Dataset C prior-shift,LightGBM − Uniform soft voting,fatal_recall,0.06542146022873337,0.0,0.16666666666666663,1000
-Dataset C prior-shift,Entropy adaptive (alpha=2) − Uniform soft voting,accuracy,0.0024645,-0.0015000000000000568,0.006500000000000061,1000
-Dataset C prior-shift,Entropy adaptive (alpha=2) − Uniform soft voting,balanced_accuracy,0.0005988213838328676,-0.0036466284500433154,0.0049490157364079105,1000
-Dataset C prior-shift,Entropy adaptive (alpha=2) − Uniform soft voting,macro_f1,0.0003719087485363812,-0.006888212719092157,0.007578677358180954,1000
+Dataset A test,Logistic Regression − Uniform soft voting,accuracy,-0.013140000000000011,-0.027000000000000024,-0.0010000000000000009,1000
+Dataset A test,Logistic Regression − Uniform soft voting,balanced_accuracy,-0.009874936309515308,-0.023337947080495067,0.0024563745869200133,1000
+Dataset A test,Logistic Regression − Uniform soft voting,macro_f1,-0.012881038302394593,-0.02630294329128991,-0.0007533494460401507,1000
+Dataset A test,Logistic Regression − Uniform soft voting,fatal_recall,0.011071338015113383,-0.012906024770834823,0.0341280609937326,1000
+Dataset A test,Random Forest − Uniform soft voting,accuracy,-0.031340000000000014,-0.046499999999999986,-0.017000000000000015,1000
+Dataset A test,Random Forest − Uniform soft voting,balanced_accuracy,-0.036348749918462674,-0.051079849586596726,-0.022093279331263316,1000
+Dataset A test,Random Forest − Uniform soft voting,macro_f1,-0.030218868901507025,-0.04528893590289925,-0.015516562372570607,1000
+Dataset A test,Random Forest − Uniform soft voting,fatal_recall,-0.06839091386470575,-0.09563454759106933,-0.042976787127407094,1000
+Dataset A test,LightGBM − Uniform soft voting,accuracy,-0.006207500000000006,-0.018012500000000015,0.00550000000000006,1000
+Dataset A test,LightGBM − Uniform soft voting,balanced_accuracy,-0.0060094026612340645,-0.017133502674652534,0.004949156663340483,1000
+Dataset A test,LightGBM − Uniform soft voting,macro_f1,-0.006001669103392754,-0.01818667883144074,0.0058238509478579,1000
+Dataset A test,LightGBM − Uniform soft voting,fatal_recall,-0.004900906672423282,-0.023257045723295164,0.015352567818223965,1000
+Dataset A test,Entropy adaptive (alpha=2) − Uniform soft voting,accuracy,0.0014465000000000005,-0.0035000000000000586,0.006499999999999953,1000
+Dataset A test,Entropy adaptive (alpha=2) − Uniform soft voting,balanced_accuracy,0.0021445283562430964,-0.003330931711326249,0.007348385113576111,1000
+Dataset A test,Entropy adaptive (alpha=2) − Uniform soft voting,macro_f1,0.0011655752046359899,-0.003969934012963444,0.006213113379711199,1000
+Dataset A test,Entropy adaptive (alpha=2) − Uniform soft voting,fatal_recall,0.006536360265029578,-0.004357298474945592,0.017168304951774436,1000
+Dataset A test,Entropy + disagreement (beta=0.5) − Uniform soft voting,accuracy,0.0009135000000000011,-0.0040000000000000036,0.00550000000000006,1000
+Dataset A test,Entropy + disagreement (beta=0.5) − Uniform soft voting,balanced_accuracy,0.0017010091614431922,-0.00330396627526775,0.006653420441355123,1000
+Dataset A test,Entropy + disagreement (beta=0.5) − Uniform soft voting,macro_f1,0.0005365140022341437,-0.004266295424484437,0.005304582438021016,1000
+Dataset A test,Entropy + disagreement (beta=0.5) − Uniform soft voting,fatal_recall,0.006536360265029578,-0.004357298474945592,0.017168304951774436,1000
+Dataset A test,Entropy + disagreement (beta=1) − Uniform soft voting,accuracy,0.0009594999999999998,-0.0030000000000000027,0.005499999999999949,1000
+Dataset A test,Entropy + disagreement (beta=1) − Uniform soft voting,balanced_accuracy,0.0008955394226069943,-0.003221171713043433,0.005393431910658841,1000
+Dataset A test,Entropy + disagreement (beta=1) − Uniform soft voting,macro_f1,0.0004348599840468661,-0.0034647803309795495,0.0047923830154763146,1000
+Dataset A test,Entropy + disagreement (beta=1) − Uniform soft voting,fatal_recall,0.0001890067649368775,-0.008714596949891074,0.008602150537634357,1000
+Dataset A test,Entropy + disagreement (beta=2) − Uniform soft voting,accuracy,-3.7000000000001035e-05,-0.0035000000000000586,0.003512500000000046,1000
+Dataset A test,Entropy + disagreement (beta=2) − Uniform soft voting,balanced_accuracy,-0.00024767029853487674,-0.003936510131269222,0.0036012841557511834,1000
+Dataset A test,Entropy + disagreement (beta=2) − Uniform soft voting,macro_f1,-0.00059651296667562,-0.004295125161015087,0.003113965362302736,1000
+Dataset A test,Entropy + disagreement (beta=2) − Uniform soft voting,fatal_recall,-0.001986311820333216,-0.01037506821784662,0.004504758709047604,1000
+Dataset A test,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,accuracy,0.0024515000000000014,-0.0040000000000000036,0.009000000000000008,1000
+Dataset A test,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,balanced_accuracy,0.0004981727714803329,-0.006063585214812564,0.007032979465347576,1000
+Dataset A test,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,macro_f1,0.0031075253753559237,-0.0033148318530190125,0.009694591482428948,1000
+Dataset A test,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,fatal_recall,-0.010555020044447801,-0.023965141612200425,0.0020669838183207632,1000
+Dataset B same-simulator,Logistic Regression − Uniform soft voting,accuracy,-0.026260199999999997,-0.034404999999999984,-0.018600000000000057,1000
+Dataset B same-simulator,Logistic Regression − Uniform soft voting,balanced_accuracy,-0.02126335949441188,-0.02917731366482849,-0.01372051530830153,1000
+Dataset B same-simulator,Logistic Regression − Uniform soft voting,macro_f1,-0.02455031197946964,-0.03240014472883622,-0.016875811605019303,1000
+Dataset B same-simulator,Logistic Regression − Uniform soft voting,fatal_recall,0.008324569959111022,-0.004708542928241158,0.021404887557609515,1000
+Dataset B same-simulator,Random Forest − Uniform soft voting,accuracy,-0.0387058,-0.04700500000000004,-0.030594999999999966,1000
+Dataset B same-simulator,Random Forest − Uniform soft voting,balanced_accuracy,-0.04573743396209738,-0.05462826732175857,-0.037606996633450636,1000
+Dataset B same-simulator,Random Forest − Uniform soft voting,macro_f1,-0.04075617101903737,-0.049499420921931964,-0.03251234608786671,1000
+Dataset B same-simulator,Random Forest − Uniform soft voting,fatal_recall,-0.08837147795552215,-0.10724429508035385,-0.07053666590537094,1000
+Dataset B same-simulator,LightGBM − Uniform soft voting,accuracy,-0.012467599999999994,-0.020199999999999996,-0.0050000000000000044,1000
+Dataset B same-simulator,LightGBM − Uniform soft voting,balanced_accuracy,-0.012681099946333343,-0.020389558300740414,-0.005272244587798234,1000
+Dataset B same-simulator,LightGBM − Uniform soft voting,macro_f1,-0.01329517240870039,-0.02115986101169185,-0.005600711431676781,1000
+Dataset B same-simulator,LightGBM − Uniform soft voting,fatal_recall,-0.01519893289676557,-0.030909559512652274,-0.0008290816326530003,1000
+Dataset B same-simulator,Entropy adaptive (alpha=2) − Uniform soft voting,accuracy,-0.0005708000000000003,-0.0036000000000000476,0.0028000000000000247,1000
+Dataset B same-simulator,Entropy adaptive (alpha=2) − Uniform soft voting,balanced_accuracy,0.0008282868866014665,-0.002110927524489639,0.00413554030217792,1000
+Dataset B same-simulator,Entropy adaptive (alpha=2) − Uniform soft voting,macro_f1,-0.00048138035072038877,-0.0034245289774643196,0.0028909689248797885,1000
+Dataset B same-simulator,Entropy adaptive (alpha=2) − Uniform soft voting,fatal_recall,0.00900914564743514,0.0034582554332996712,0.015374703359352844,1000
+Dataset B same-simulator,Entropy + disagreement (beta=0.5) − Uniform soft voting,accuracy,-0.0007801999999999998,-0.0034000000000000696,0.0022000000000000908,1000
+Dataset B same-simulator,Entropy + disagreement (beta=0.5) − Uniform soft voting,balanced_accuracy,0.0006424675060108276,-0.0019462645668086864,0.0035285749942617073,1000
+Dataset B same-simulator,Entropy + disagreement (beta=0.5) − Uniform soft voting,macro_f1,-0.000609425727355794,-0.0033330905816107426,0.0024741602280404476,1000
+Dataset B same-simulator,Entropy + disagreement (beta=0.5) − Uniform soft voting,fatal_recall,0.008990415779131598,0.004231566763766271,0.014951956129919347,1000
+Dataset B same-simulator,Entropy + disagreement (beta=1) − Uniform soft voting,accuracy,0.00039500000000000044,-0.0021999999999999797,0.0030000000000000027,1000
+Dataset B same-simulator,Entropy + disagreement (beta=1) − Uniform soft voting,balanced_accuracy,0.0015285939234912027,-0.0008766702919042691,0.004172432181435159,1000
+Dataset B same-simulator,Entropy + disagreement (beta=1) − Uniform soft voting,macro_f1,0.00042929906785329054,-0.002210934764137404,0.0030518912014026807,1000
+Dataset B same-simulator,Entropy + disagreement (beta=1) − Uniform soft voting,fatal_recall,0.008094344041370605,0.003564983023890342,0.013864825274561253,1000
+Dataset B same-simulator,Entropy + disagreement (beta=2) − Uniform soft voting,accuracy,-0.00020020000000000126,-0.0023999999999999577,0.0020000000000000018,1000
+Dataset B same-simulator,Entropy + disagreement (beta=2) − Uniform soft voting,balanced_accuracy,0.00025221296841668514,-0.001638609893865442,0.0023331099840548752,1000
+Dataset B same-simulator,Entropy + disagreement (beta=2) − Uniform soft voting,macro_f1,-0.00031160387270366143,-0.0023792531183529724,0.0019258034809914806,1000
+Dataset B same-simulator,Entropy + disagreement (beta=2) − Uniform soft voting,fatal_recall,0.002698418148518082,0.0,0.006273819245950759,1000
+Dataset B same-simulator,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,accuracy,0.0027982000000000016,-0.0020000000000000018,0.007205000000000087,1000
+Dataset B same-simulator,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,balanced_accuracy,-0.00020012253338296337,-0.004884602396636453,0.004008379750060053,1000
+Dataset B same-simulator,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,macro_f1,0.0029426172828051367,-0.0017130074917076187,0.007323630217440251,1000
+Dataset B same-simulator,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,fatal_recall,-0.016023256950422525,-0.02403508067292461,-0.008598846290408087,1000
+Dataset C prior-shift,Logistic Regression − Uniform soft voting,accuracy,-0.02799950000000002,-0.041000000000000036,-0.014000000000000012,1000
+Dataset C prior-shift,Logistic Regression − Uniform soft voting,balanced_accuracy,-0.0001094488011055752,-0.029853302511083563,0.03667520740425952,1000
+Dataset C prior-shift,Logistic Regression − Uniform soft voting,macro_f1,-0.033381246556725905,-0.05966887952443513,-0.006611801727682309,1000
+Dataset C prior-shift,Logistic Regression − Uniform soft voting,fatal_recall,0.07202976805378847,0.0,0.1724137931034483,1000
+Dataset C prior-shift,Random Forest − Uniform soft voting,accuracy,-0.020663000000000018,-0.033500000000000085,-0.007500000000000062,1000
+Dataset C prior-shift,Random Forest − Uniform soft voting,balanced_accuracy,-0.03352885366534534,-0.07150733255941209,-0.0035343288624043716,1000
+Dataset C prior-shift,Random Forest − Uniform soft voting,macro_f1,-0.03252347807097993,-0.06021810373187018,-0.007927106015283682,1000
+Dataset C prior-shift,Random Forest − Uniform soft voting,fatal_recall,-0.07191051731343931,-0.18190235690235695,0.0,1000
+Dataset C prior-shift,LightGBM − Uniform soft voting,accuracy,-0.0033320000000000008,-0.014012500000000011,0.008000000000000007,1000
+Dataset C prior-shift,LightGBM − Uniform soft voting,balanced_accuracy,-0.030156271881299896,-0.0685704725068869,-0.0010176083952333694,1000
+Dataset C prior-shift,LightGBM − Uniform soft voting,macro_f1,-0.013382361128564833,-0.03955613289435004,0.011592303764993747,1000
+Dataset C prior-shift,LightGBM − Uniform soft voting,fatal_recall,-0.07191051731343931,-0.18190235690235695,0.0,1000
+Dataset C prior-shift,Entropy adaptive (alpha=2) − Uniform soft voting,accuracy,-0.00036999999999999777,-0.0050000000000000044,0.0044999999999999485,1000
+Dataset C prior-shift,Entropy adaptive (alpha=2) − Uniform soft voting,balanced_accuracy,-0.0010442145557211643,-0.005240154797832586,0.0029415022420747512,1000
+Dataset C prior-shift,Entropy adaptive (alpha=2) − Uniform soft voting,macro_f1,-0.0020856899966117497,-0.008546972053783788,0.0029688596078252675,1000
 Dataset C prior-shift,Entropy adaptive (alpha=2) − Uniform soft voting,fatal_recall,0.0,0.0,0.0,1000
-Dataset C prior-shift,Entropy + disagreement (beta=0.5) − Uniform soft voting,accuracy,0.0019465000000000003,-0.0024999999999999467,0.00649999999999995,1000
-Dataset C prior-shift,Entropy + disagreement (beta=0.5) − Uniform soft voting,balanced_accuracy,-0.00013554272244449593,-0.0046130780847497745,0.0044696780364537544,1000
-Dataset C prior-shift,Entropy + disagreement (beta=0.5) − Uniform soft voting,macro_f1,-0.001248527567394723,-0.009020795822720066,0.0064311822487875345,1000
+Dataset C prior-shift,Entropy + disagreement (beta=0.5) − Uniform soft voting,accuracy,-0.0019249999999999983,-0.006000000000000005,0.0020000000000000018,1000
+Dataset C prior-shift,Entropy + disagreement (beta=0.5) − Uniform soft voting,balanced_accuracy,-0.002739104129082313,-0.006640576495419176,0.000757597712135144,1000
+Dataset C prior-shift,Entropy + disagreement (beta=0.5) − Uniform soft voting,macro_f1,-0.0035412097015423624,-0.0094401008493341,0.0007279296978741326,1000
 Dataset C prior-shift,Entropy + disagreement (beta=0.5) − Uniform soft voting,fatal_recall,0.0,0.0,0.0,1000
-Dataset C prior-shift,Entropy + disagreement (beta=1) − Uniform soft voting,accuracy,0.002447999999999999,-0.0014999999999999486,0.00649999999999995,1000
-Dataset C prior-shift,Entropy + disagreement (beta=1) − Uniform soft voting,balanced_accuracy,0.0005773322934918676,-0.0031191695273693723,0.004522505029133777,1000
-Dataset C prior-shift,Entropy + disagreement (beta=1) − Uniform soft voting,macro_f1,0.0013351873877890331,-0.005665620345952466,0.007973565957556227,1000
+Dataset C prior-shift,Entropy + disagreement (beta=1) − Uniform soft voting,accuracy,0.0004990000000000001,-0.0030000000000000027,0.0040000000000000036,1000
+Dataset C prior-shift,Entropy + disagreement (beta=1) − Uniform soft voting,balanced_accuracy,-0.0012087752949332532,-0.004922841549773007,0.0019064909868961298,1000
+Dataset C prior-shift,Entropy + disagreement (beta=1) − Uniform soft voting,macro_f1,-0.0016371615965578754,-0.007281532257887363,0.002404422027075581,1000
 Dataset C prior-shift,Entropy + disagreement (beta=1) − Uniform soft voting,fatal_recall,0.0,0.0,0.0,1000
-Dataset C prior-shift,Entropy + disagreement (beta=2) − Uniform soft voting,accuracy,0.0029764999999999995,-0.0004999999999999449,0.006500000000000061,1000
-Dataset C prior-shift,Entropy + disagreement (beta=2) − Uniform soft voting,balanced_accuracy,0.001305158605922451,-0.0022299194472985007,0.004828933796773816,1000
-Dataset C prior-shift,Entropy + disagreement (beta=2) − Uniform soft voting,macro_f1,0.0029673949162907576,-0.0030667809943618284,0.008980137075562661,1000
+Dataset C prior-shift,Entropy + disagreement (beta=2) − Uniform soft voting,accuracy,0.0010160000000000021,-0.0015000000000000568,0.0040000000000000036,1000
+Dataset C prior-shift,Entropy + disagreement (beta=2) − Uniform soft voting,balanced_accuracy,-0.0009749379196608191,-0.003987214794903044,0.0012721498289912168,1000
+Dataset C prior-shift,Entropy + disagreement (beta=2) − Uniform soft voting,macro_f1,0.00027068110980784066,-0.0022367093504634837,0.0025077394215152747,1000
 Dataset C prior-shift,Entropy + disagreement (beta=2) − Uniform soft voting,fatal_recall,0.0,0.0,0.0,1000
-Dataset C prior-shift,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,accuracy,-0.02714100000000002,-0.035499999999999976,-0.019487499999999974,1000
-Dataset C prior-shift,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,balanced_accuracy,-0.006289600959517048,-0.037925080848680855,0.03319867516943895,1000
-Dataset C prior-shift,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,macro_f1,-0.06349062825725792,-0.08539646799481805,-0.03969166776825189,1000
-Dataset C prior-shift,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,fatal_recall,0.09857262838867546,0.0,0.21052631578947367,1000
+Dataset C prior-shift,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,accuracy,-0.0040230000000000005,-0.01100000000000001,0.0034999999999999476,1000
+Dataset C prior-shift,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,balanced_accuracy,0.00994555152028018,0.003208369884245266,0.017374409549542093,1000
+Dataset C prior-shift,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,macro_f1,0.01619345066587268,0.0032887236788313678,0.03127731981490181,1000
+Dataset C prior-shift,Selected SAFER (calibrated + tuned threshold) − Uniform soft voting,fatal_recall,0.0,0.0,0.0,1000

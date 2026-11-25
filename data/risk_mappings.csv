@@ -1,0 +1,56 @@
+Feature,Category/range,Normalized risk contribution
+speed_limit_kmh,<=30,0.05
+speed_limit_kmh,31-50,0.2
+speed_limit_kmh,51-70,0.55
+speed_limit_kmh,71-90,0.82
+speed_limit_kmh,>90,1
+road_type,Single carriageway,0.55
+road_type,Dual carriageway,0.35
+road_type,Roundabout,0.25
+road_type,One way,0.2
+road_type,Slip road,0.65
+junction_detail,No junction,0.2
+junction_detail,T or staggered,0.55
+junction_detail,Crossroads,0.8
+junction_detail,Roundabout,0.35
+junction_detail,Private drive,0.3
+junction_control,Give way,0.45
+junction_control,Not controlled,0.6
+junction_control,Auto traffic signal,0.25
+junction_control,Stop sign,0.4
+junction_control,Other,0.5
+urban_or_rural,Rural,0.55
+urban_or_rural,Urban,0.35
+weather_conditions,Fine,0.05
+weather_conditions,Rain,0.35
+weather_conditions,Fog,0.7
+weather_conditions,Snow,0.75
+weather_conditions,High winds,0.55
+light_conditions,Daylight,0.05
+light_conditions,Darkness - lights lit,0.35
+light_conditions,Darkness - no lighting,0.75
+light_conditions,Darkness - lighting unknown,0.55
+road_surface_conditions,Dry,0.05
+road_surface_conditions,Wet or damp,0.35
+road_surface_conditions,Snow,0.75
+road_surface_conditions,Ice,0.9
+vehicle_type_involved,Car,0.2
+vehicle_type_involved,Motorcycle,0.9
+vehicle_type_involved,Goods vehicle,0.65
+vehicle_type_involved,Bicycle,0.7
+vehicle_type_involved,Bus,0.4
+vehicle_type_involved,Other,0.45
+driver_age_band,17-21,0.7
+driver_age_band,22-30,0.4
+driver_age_band,31-45,0.2
+driver_age_band,46-60,0.25
+driver_age_band,61-70,0.5
+driver_age_band,71-85,0.75
+hour,00:00-04:59,0.7
+hour,17:00-20:59,0.45
+hour,Other hours,0.2
+speed_excess_kmh_simulated,0 km/h,0.0
+speed_excess_kmh_simulated,1-10 km/h,0.25
+speed_excess_kmh_simulated,11-20 km/h,0.5
+speed_excess_kmh_simulated,21-30 km/h,0.75
+speed_excess_kmh_simulated,>30 km/h,1.0

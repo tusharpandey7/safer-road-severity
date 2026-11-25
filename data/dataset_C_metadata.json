@@ -6,23 +6,24 @@
   "rows": 2000,
   "seed": 2027,
   "target_counts": {
-    "Slight": 1500,
+    "Slight": 1503,
     "Serious": 470,
-    "Fatal": 30
+    "Fatal": 27
   },
   "observed_counts": {
-    "Slight": 1500,
+    "Slight": 1503,
     "Serious": 470,
-    "Fatal": 30
+    "Fatal": 27
   },
   "observed_proportions": {
-    "Slight": 0.75,
+    "Slight": 0.7515,
     "Serious": 0.235,
-    "Fatal": 0.015
+    "Fatal": 0.0135
   },
+  "prevalence_note": "A 1.37% Fatal share cannot be represented exactly in 2,000 integer rows; 27/2,000 = 1.35% is the closest lower integer representation.",
   "limitations": [
     "Dataset C is a subset of Dataset B, so their evaluation results are not independent replications.",
-    "The class prior is an assumed STATS19-inspired scenario; all features and labels remain synthetic.",
+    "The class prior is an assumed severe-imbalance scenario; all features and labels remain synthetic.",
     "No repeated rows are added, but records in C are also present in B by design.",
     "This dataset cannot establish real-world performance or calibrated real-world probabilities."
   ]

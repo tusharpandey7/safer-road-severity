@@ -10,7 +10,7 @@ from src.ui_helpers import as_percent, load_experiment_table, load_refit_metrics
 st.title("Model performance", icon=":material/monitoring:")
 st.caption("All displayed scores evaluate synthetic severity labels. These experiments do not establish real-world crash-risk performance.")
 st.info(
-    "Dataset C is a 2,000-row, low-Fatal-prior stress sample selected from Dataset B without replacement. C is not independent of B and is not a real-world test set.",
+    "Dataset C is a 2,000-row, 1.35% Fatal-prior stress sample selected from Dataset B without replacement. It contains only 27 Fatal records, overlaps B, and is not a real-world test set.",
     title="Evaluation boundary",
 )
 
@@ -18,6 +18,8 @@ comparison = load_experiment_table("ensemble_comparison.csv")
 bootstrap = load_experiment_table("paired_bootstrap_comparisons.csv")
 calibration = load_experiment_table("calibration_metrics.csv")
 reliability = load_experiment_table("reliability_diagram_points.csv")
+importance = load_experiment_table("permutation_importance.csv")
+sensitivity = load_experiment_table("simulator_sensitivity.csv")
 
 split_labels = {
     "Dataset A test": "Dataset A · untouched test",
@@ -105,6 +107,26 @@ curves = alt.Chart(curve_data).mark_line(point=True).encode(
 )
 st.altair_chart(alt.layer(reference_line, curves).properties(height=300), alt=f"Raw and selected calibrated reliability curves for {cal_class} on {split_labels[cal_split]}")
 st.caption("Platt and isotonic mappings are fitted on a dedicated Dataset A calibration partition; the calibration method is selected using validation log loss. Calibration is specific to these synthetic labels. Brier, log loss, and ECE are evaluation summaries, not guarantees of real-world probability accuracy.")
+
+st.subheader("Explainability and simulator sensitivity")
+importance_tab, sensitivity_tab = st.tabs(["Global permutation importance", "Label-rule sensitivity"])
+with importance_tab:
+    st.caption("Each field is permuted independently on the untouched Dataset A test rows. Larger Macro-F1 drops indicate stronger predictive association for this fitted model. This is not a causal effect.")
+    importance_plot = importance.copy()
+    importance_plot["Feature label"] = importance_plot["Feature"].str.replace("_", " ").str.replace("simulated", "(simulated)", regex=False).str.capitalize()
+    importance_chart = alt.Chart(importance_plot).mark_bar(color="#147D78", cornerRadiusEnd=4).encode(
+        x=alt.X("Macro-F1 drop mean:Q", title="Mean Macro-F1 decrease after permutation"),
+        y=alt.Y("Feature label:N", sort="-x", title=None),
+        tooltip=["Feature label:N", alt.Tooltip("Macro-F1 drop mean:Q", format=".4f"), alt.Tooltip("Macro-F1 drop sd:Q", format=".4f")],
+    ).properties(height=max(300, len(importance_plot) * 23))
+    st.altair_chart(importance_chart, alt="Global permutation importance for pre-crash model inputs")
+with sensitivity_tab:
+    st.caption("The fitted model is frozen while the synthetic label rule is varied around its stated settings. This reports agreement with alternative simulator labels; it is not a retrained-model result or real-world accuracy.")
+    sensitivity_display = sensitivity[["Variant", "Alternative Fatal share", "Label changes from baseline", "Frozen-model agreement accuracy", "Frozen-model agreement macro-F1", "Frozen-model Fatal recall"]].copy()
+    for column in sensitivity_display.columns[1:]:
+        sensitivity_display[column] = sensitivity_display[column].map(lambda value: as_percent(value, 2))
+    st.dataframe(sensitivity_display, hide_index=True, alt="Frozen-model agreement after varying simulator weights or class thresholds")
+    st.caption("Each weight and interaction is changed one at a time by ±25%; weights are renormalized where applicable. The Slight/Fatal cutoffs are varied independently by ±0.02. Refit models and external validation would be needed to establish robustness beyond this simulator.")
 
 with st.expander("Original supplied workbook benchmark"):
     st.caption("These are the earlier supplied benchmark numbers, retained for traceability. The experiment above is newly reproduced by `src/train_model.py` with calibration and paired comparisons.")

@@ -35,6 +35,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from src.generate_dataset_c import DESTINATION as DATASET_C_PATH
+from src.postfit_diagnostics import write_permutation_importance, write_rule_sensitivity
 from src.model_service import CATEGORICAL_FEATURES, FEATURES, LABELS, NUMERIC_FEATURES
 
 
@@ -430,6 +431,16 @@ def main() -> None:
     }
     joblib.dump(artifact, model_dir / "safer_raae.joblib", compress=3)
 
+    write_permutation_importance(
+        x_test, y_test, output_dir / "permutation_importance.csv", repeats=5
+    )
+    write_rule_sensitivity(
+        x_test,
+        y_test,
+        dataset_a.loc[x_test.index, "simulator_noise"],
+        output_dir / "simulator_sensitivity.csv",
+    )
+
     summary = {
         "evaluation_design": "Dataset A split 60% model fit, 10% calibration, 10% validation, 20% untouched test; Dataset B untouched same-simulator sample; Dataset C is a prior-shift subset of B and is not independent of B.",
         "selection": {
@@ -447,6 +458,8 @@ def main() -> None:
         "bootstrap_replicates": BOOTSTRAP_REPLICATES,
         "calibration_metrics_path": "outputs/calibration_metrics.csv",
         "comparison_metrics_path": "outputs/ensemble_comparison.csv",
+        "permutation_importance_path": "outputs/permutation_importance.csv",
+        "simulator_sensitivity_path": "outputs/simulator_sensitivity.csv",
     }
     (output_dir / "interactive_model_metrics.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print(json.dumps(summary, indent=2), flush=True)

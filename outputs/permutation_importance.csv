@@ -1,0 +1,16 @@
+Feature,Macro-F1 drop mean,Macro-F1 drop sd,Repeats,Baseline macro-F1,Interpretation
+vehicle_type_involved,0.26484526170437234,0.01340952085649591,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+speed_limit_kmh,0.1863510318381199,0.004575105017255312,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+light_conditions,0.09346141305580927,0.006218494096847979,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+speed_excess_kmh_simulated,0.08847069679246415,0.005175538435813055,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+weather_conditions,0.07616931842444415,0.003587647046959908,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+road_surface_conditions,0.06597364909230649,0.005105250199405639,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+junction_detail,0.0520180168257961,0.0014076467797255695,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+actual_speed_kmh_simulated,0.047152296911282754,0.005837983535007253,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+road_type,0.021980027872384244,0.0033421734832979628,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+hour,0.01380742038184506,0.004340123774606149,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+driver_age_band,0.011696566195337366,0.004853769960472267,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+junction_control,0.00393561465174268,0.005406236380124255,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+urban_or_rural,0.0028415735076125826,0.002652332727558555,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+day_type,0.0017456034370407103,0.0007303109846181054,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance
+speeding_indicator_simulated,3.215088960479839e-05,0.0030509579062354426,5,0.8498145118394876,Synthetic test-set predictive association; not causal importance

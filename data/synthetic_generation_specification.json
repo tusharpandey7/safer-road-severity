@@ -1,0 +1,57 @@
+{
+  "scope": "Synthetic pre-crash severity conditional on a hypothetical collision occurring",
+  "feature_availability": "number_of_vehicles is excluded because it is generally only known after a collision",
+  "speed_note": "actual_speed_kmh_simulated, speed_excess_kmh_simulated, and speeding_indicator_simulated are hypothetical simulator values, not measured accident data",
+  "marginal_source": "Frozen category marginals estimated from the earlier synthetic Dataset A, stored in synthetic_context_marginals.json; not real-world frequencies",
+  "weights": {
+    "speed_limit": 0.18,
+    "vehicle_type": 0.16,
+    "road_type": 0.08,
+    "junction_detail": 0.08,
+    "junction_control": 0.04,
+    "urban_or_rural": 0.04,
+    "weather": 0.08,
+    "light": 0.08,
+    "surface": 0.08,
+    "driver_age": 0.06,
+    "hour": 0.04,
+    "speed_excess": 0.08
+  },
+  "interactions": {
+    "speed_excess_x_vehicle": 0.1,
+    "weather_x_surface": 0.08,
+    "light_x_hour": 0.06
+  },
+  "noise": "Normal(0, 0.018^2), independently sampled per generated row",
+  "thresholds": {
+    "Slight_upper": 0.299,
+    "Serious_upper": 0.393,
+    "Fatal_lower": 0.393
+  },
+  "seed_and_rows": {
+    "A": {
+      "rows": 10000,
+      "seed": 42
+    },
+    "B": {
+      "rows": 5000,
+      "seed": 2026
+    }
+  },
+  "limitations": [
+    "Weights, speed residual distribution, noise, and severity thresholds are transparent design assumptions, not learned physical laws or causal effects.",
+    "These synthetic labels cannot establish real-world prediction performance."
+  ],
+  "class_counts": {
+    "A": {
+      "Serious": 3888,
+      "Slight": 3778,
+      "Fatal": 2334
+    },
+    "B": {
+      "Serious": 1977,
+      "Slight": 1905,
+      "Fatal": 1118
+    }
+  }
+}

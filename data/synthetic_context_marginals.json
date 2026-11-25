@@ -1,0 +1,102 @@
+{
+  "categorical_marginals": {
+    "speed_limit_kmh": {
+      "20": 779,
+      "30": 1197,
+      "40": 1799,
+      "50": 2116,
+      "60": 1992,
+      "70": 1208,
+      "80": 619,
+      "90": 170,
+      "100": 120
+    },
+    "road_type": {
+      "Dual carriageway": 1836,
+      "One way": 573,
+      "Roundabout": 1049,
+      "Single carriageway": 6140,
+      "Slip road": 402
+    },
+    "junction_detail": {
+      "Crossroads": 1217,
+      "No junction": 4726,
+      "Private drive": 813,
+      "Roundabout": 1010,
+      "T or staggered": 2234
+    },
+    "junction_control": {
+      "Auto traffic signal": 2417,
+      "Give way": 3476,
+      "Not controlled": 2646,
+      "Other": 688,
+      "Stop sign": 773
+    },
+    "urban_or_rural": {
+      "Rural": 3198,
+      "Urban": 6802
+    },
+    "weather_conditions": {
+      "Fine": 7218,
+      "Fog": 470,
+      "High winds": 344,
+      "Rain": 1588,
+      "Snow": 380
+    },
+    "light_conditions": {
+      "Darkness - lighting unknown": 422,
+      "Darkness - lights lit": 2399,
+      "Darkness - no lighting": 902,
+      "Daylight": 6277
+    },
+    "road_surface_conditions": {
+      "Dry": 6903,
+      "Ice": 300,
+      "Snow": 426,
+      "Wet or damp": 2371
+    },
+    "vehicle_type_involved": {
+      "Bicycle": 742,
+      "Bus": 336,
+      "Car": 6792,
+      "Goods vehicle": 798,
+      "Motorcycle": 982,
+      "Other": 350
+    },
+    "driver_age_band": {
+      "17-21": 1122,
+      "22-30": 1683,
+      "31-45": 4000,
+      "46-60": 2594,
+      "61-70": 485,
+      "71-85": 116
+    }
+  },
+  "hour_marginal": {
+    "0": 468,
+    "1": 414,
+    "2": 399,
+    "3": 428,
+    "4": 401,
+    "5": 412,
+    "6": 409,
+    "7": 413,
+    "8": 450,
+    "9": 433,
+    "10": 420,
+    "11": 364,
+    "12": 424,
+    "13": 423,
+    "14": 435,
+    "15": 427,
+    "16": 421,
+    "17": 436,
+    "18": 409,
+    "19": 382,
+    "20": 399,
+    "21": 393,
+    "22": 401,
+    "23": 439
+  },
+  "source_note": "Frozen empirical feature marginals from SAFER synthetic Dataset A before pre-crash schema revision."
+}

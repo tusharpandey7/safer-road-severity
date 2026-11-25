@@ -16,7 +16,7 @@ pages = [
     ),
     st.Page(
         "app_pages/predict.py", title="Scenario lab", icon=":material/analytics:",
-        help="Enter the 13 recorded scenario fields to get a three-class severity score and local SHAP explanation.",
+        help="Enter a pre-crash scenario, including synthetic hypothetical speed, and review class scores and local SHAP explanations.",
     ),
     st.Page(
         "app_pages/performance.py", title="Model performance", icon=":material/monitoring:",
@@ -41,7 +41,7 @@ with st.sidebar:
     st.markdown("**Model**")
     st.caption("Entropy-adaptive soft-voting ensemble")
     st.markdown("**Data**")
-    st.caption("10,000 development rows · 5,000 independent-sample rows")
-    st.caption("Severity is classified for an entered collision scenario. The app does not predict whether a crash will occur.")
+    st.caption("10,000 Dataset A rows · 5,000 Dataset B rows · Dataset C stress sample")
+    st.caption("Pre-crash severity conditional on a hypothetical collision; no collision-occurrence estimate.")
 
 selected_page.run()

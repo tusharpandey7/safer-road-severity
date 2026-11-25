@@ -62,7 +62,7 @@ with right:
 
 with st.container(border=True):
     st.subheader("Sample records")
-    st.caption("The date is retained for data exploration, but the supplied model card excludes collision_date from predictors.")
+    st.caption("Date is audit metadata. The simulator noise, risk score, and severity columns document label construction and are excluded from predictors. Speed values are simulated.")
     st.dataframe(frame.head(100), hide_index=True, alt=f"First 100 synthetic records from Dataset {which}")
     st.download_button(
         f"Download Dataset {which} CSV", data=frame.to_csv(index=False),

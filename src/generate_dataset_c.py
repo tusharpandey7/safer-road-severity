@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data" / "synthetic_dataset_B_5000.csv"
 DESTINATION = ROOT / "data" / "synthetic_dataset_C_prior_shift_2000.csv"
 METADATA = ROOT / "data" / "dataset_C_metadata.json"
-TARGET_COUNTS = {"Slight": 1500, "Serious": 470, "Fatal": 30}
+TARGET_COUNTS = {"Slight": 1503, "Serious": 470, "Fatal": 27}
 SEED = 2027
 
 
@@ -49,9 +49,10 @@ def main() -> None:
         "target_counts": TARGET_COUNTS,
         "observed_counts": dataset_c["severity"].value_counts().reindex(TARGET_COUNTS, fill_value=0).to_dict(),
         "observed_proportions": dataset_c["severity"].value_counts(normalize=True).reindex(TARGET_COUNTS, fill_value=0).to_dict(),
+        "prevalence_note": "A 1.37% Fatal share cannot be represented exactly in 2,000 integer rows; 27/2,000 = 1.35% is the closest lower integer representation.",
         "limitations": [
             "Dataset C is a subset of Dataset B, so their evaluation results are not independent replications.",
-            "The class prior is an assumed STATS19-inspired scenario; all features and labels remain synthetic.",
+            "The class prior is an assumed severe-imbalance scenario; all features and labels remain synthetic.",
             "No repeated rows are added, but records in C are also present in B by design.",
             "This dataset cannot establish real-world performance or calibrated real-world probabilities.",
         ],

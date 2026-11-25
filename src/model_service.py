@@ -18,10 +18,11 @@ LABELS = ["Slight", "Serious", "Fatal"]
 FEATURES = [
     "day_type", "hour", "speed_limit_kmh", "road_type", "junction_detail",
     "junction_control", "urban_or_rural", "weather_conditions", "light_conditions",
-    "road_surface_conditions", "vehicle_type_involved", "number_of_vehicles",
-    "driver_age_band",
+    "road_surface_conditions", "vehicle_type_involved", "driver_age_band",
+    "actual_speed_kmh_simulated", "speed_excess_kmh_simulated",
+    "speeding_indicator_simulated",
 ]
-NUMERIC_FEATURES = ["hour", "speed_limit_kmh", "number_of_vehicles"]
+NUMERIC_FEATURES = ["hour", "speed_limit_kmh", "actual_speed_kmh_simulated", "speed_excess_kmh_simulated", "speeding_indicator_simulated"]
 CATEGORICAL_FEATURES = [c for c in FEATURES if c not in NUMERIC_FEATURES]
 
 

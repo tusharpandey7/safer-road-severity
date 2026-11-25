@@ -8,7 +8,7 @@ from src.ui_helpers import as_percent, load_data, load_experiment_table
 
 
 st.title("Road severity, made easier to inspect", icon=":material/alt_route:")
-st.caption("SAFER turns a set of collision-context fields into a Slight, Serious, or Fatal severity classification.")
+st.caption("SAFER estimates Slight, Serious, or Fatal severity conditional on a hypothetical collision, using pre-crash context fields.")
 st.warning(
     "Research prototype: both datasets and their severity labels are synthetic. Scores shown here describe this simulator study, not real-world road risk.",
     title="Know what this model can tell you",
@@ -55,7 +55,7 @@ with left:
         )
         st.altair_chart(chart, alt="Dataset A class counts: slight, serious, and fatal synthetic labels")
         st.caption("Dataset A was generated with fixed simulator thresholds; its class balance is not a measure of real crash prevalence.")
-        st.caption(f"Dataset C uses a {fatal_share_c:.1%} Fatal class prior as a STATS19-inspired stress scenario. It is a no-replacement subset of B, so it is not independent of B.")
+        st.caption(f"Dataset C uses a {fatal_share_c:.2%} synthetic Fatal class prior and contains only {int((data_c['severity'] == 'Fatal').sum())} Fatal rows. It is a no-replacement subset of B, so it is not independent of B.")
 
 with right:
     with st.container(border=True):
@@ -74,11 +74,11 @@ with right:
 st.subheader("What SAFER is designed to do")
 with st.container(horizontal=True):
     with st.container(border=True, height="stretch"):
-        st.markdown("**Classify a recorded scenario**")
-        st.caption("The target is severity among generated collision records—not whether a collision will happen.")
+        st.markdown("**Estimate severity before impact**")
+        st.caption("The target is severity conditional on a hypothetical collision—not the chance that one will happen.")
     with st.container(border=True, height="stretch"):
         st.markdown("**Show its reasoning**")
         st.caption("Permutation SHAP attributes the adaptive ensemble's class score across the entered fields.")
     with st.container(border=True, height="stretch"):
         st.markdown("**Keep its limits visible**")
-        st.caption("Dataset B is an independent draw from the same generator, not external validation on real crashes.")
+        st.caption("Dataset B is an independent synthetic draw, not external validation on real crashes. Simulated speed is not measured speed.")

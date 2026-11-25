@@ -9,19 +9,19 @@
       2.0
     ],
     "validation_macro_f1_by_beta": {
-      "0.0": 0.7593632926523366,
-      "0.5": 0.7593632926523366,
-      "1.0": 0.7593632926523366,
-      "2.0": 0.7616079080236525
+      "0.0": 0.8512326676116571,
+      "0.5": 0.8523553072565736,
+      "1.0": 0.8534809171111907,
+      "2.0": 0.855526678611986
     },
     "selected_beta": 2.0,
     "calibration_validation_log_loss": {
-      "raw": 0.5256669469450024,
-      "platt": 0.5311370988189607,
-      "isotonic": 0.5110409098447366
+      "raw": 0.36326858128620465,
+      "platt": 0.34261518152826925,
+      "isotonic": 0.3350766669984165
     },
     "selected_calibration": "isotonic",
-    "fatal_threshold_selected_on_validation": 0.28
+    "fatal_threshold_selected_on_validation": 0.4000000000000001
   },
   "rows": {
     "Validation": 1000,
@@ -31,12 +31,14 @@
     "Dataset C prior-shift": 2000
   },
   "dataset_c_class_counts": {
-    "Slight": 1500,
+    "Slight": 1503,
     "Serious": 470,
-    "Fatal": 30
+    "Fatal": 27
   },
   "dataset_c_warning": "C reuses unique rows from B by design; this is a prior-shift stress scenario, not a second independent test.",
   "bootstrap_replicates": 1000,
   "calibration_metrics_path": "outputs/calibration_metrics.csv",
-  "comparison_metrics_path": "outputs/ensemble_comparison.csv"
+  "comparison_metrics_path": "outputs/ensemble_comparison.csv",
+  "permutation_importance_path": "outputs/permutation_importance.csv",
+  "simulator_sensitivity_path": "outputs/simulator_sensitivity.csv"
 }
